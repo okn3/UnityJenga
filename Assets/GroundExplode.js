@@ -12,6 +12,7 @@ function OnCollisionEnter(obj:Collision){
 if (obj.gameObject.name == "Cube13-1" || obj.gameObject.name == "Cube13-2" || obj.gameObject.name == "Cube13-3"){
 	// EndSE();
 	transform.position.y = 1;
+	 this.SendMessage("Explode");
 	// Invoke("Sleep",5);
 	}else{
 		DropSE();

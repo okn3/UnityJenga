@@ -47,9 +47,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CameraScript.js" />
-     <Compile Include="Assets\JenjaScript.js" />
+     <Compile Include="Assets\Colo.js" />
+     <Compile Include="Assets\GroundExplode.js" />
+     <Compile Include="Assets\JengaScript.js" />
      <Compile Include="Assets\NewBehaviourScript.js" />
      <Compile Include="Assets\RotateScript.js" />
+     <Compile Include="Assets\Score.js" />
+     <Compile Include="Assets\explosion.js" />
      <Compile Include="Assets\gameOverScript.js" />
      <Compile Include="Assets\isGameOver.js" />
      <None Include="Assets\LeapMotion\Materials\Sources\Shaders\Toony-Basic.shader" />

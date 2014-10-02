@@ -6,6 +6,7 @@ function Start () {
 // GUI描画
 var style : GUIStyle;
 function OnGUI() {
+	GUI.contentColor = Color.black;
     GUI.Label(Rect(200,300,300,100),"Game Over", style);
 }
 function restart() {

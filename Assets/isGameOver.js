@@ -5,7 +5,7 @@ var i :int;
 function OnCollisionEnter(obj:Collision){
 	if (obj.gameObject.name == "Table") {
 	    Debug.Log("gameover");
-	    Invoke("restart",6);
+	    Invoke("restart",4);
 	    for (var i = 0 ; i < 10; i++) {
 	  transform.position.y += 1;
 	}

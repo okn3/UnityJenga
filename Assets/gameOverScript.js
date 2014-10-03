@@ -1,7 +1,8 @@
 ﻿#pragma strict
 
 function Start () {
-  Invoke("restart", 3);
+  EndSE();
+  Invoke("restart",5);
 }
 // GUI描画
 var style : GUIStyle;
@@ -11,4 +12,11 @@ function OnGUI() {
 }
 function restart() {
   Application.LoadLevel("Jenga");
+}
+
+//終了音
+var end : AudioClip;
+function EndSE(){
+	audio.clip = end;
+    audio.Play();
 }

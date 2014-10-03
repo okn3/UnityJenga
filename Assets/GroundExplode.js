@@ -75,15 +75,18 @@ function Sleep(){
 	Debug.Log("Sleep now");
 }
 
+//end judge
 function OnCollisionEnter(obj:Collision){
 if (obj.gameObject.name == "Cube13-1" || obj.gameObject.name == "Cube13-2" || obj.gameObject.name == "Cube13-3"){
+	transform.position.y = 2;
+	Invoke("Sleep",1);
 	// EndSE();
-	transform.position.y = 1;
-	Invoke("Sleep",3);
+
 	}else{
 		DropSE();
-
 	}
+
+//例外設定-下段-
   if (obj.gameObject.name == "Cube1-1" || obj.gameObject.name == "Cube1-2" || obj.gameObject.name == "Cube1-3"){
   } else {
     if (cubeName != obj.gameObject.name) {
@@ -141,9 +144,9 @@ if (obj.gameObject.name == "Cube13-1" || obj.gameObject.name == "Cube13-2" || ob
   }
 
   // gameover if top-blocks fall
-  if (obj.gameObject.name == "Cube13-1" || obj.gameObject.name == "Cube13-2" || obj.gameObject.name == "Cube13-3"){
-    transform.position.y = 1;
-  }
+  // if (obj.gameObject.name == "Cube13-1" || obj.gameObject.name == "Cube13-2" || obj.gameObject.name == "Cube13-3"){
+  //   transform.position.y = 1;
+  // }
 }
 
 function rand() {

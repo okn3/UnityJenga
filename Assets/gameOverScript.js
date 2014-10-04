@@ -1,8 +1,8 @@
 ﻿#pragma strict
 
 function Start () {
-  EndSE();
-  Invoke("restart",5);
+  // Invoke("EndSE",6);
+  Invoke("restart",1);
 }
 // GUI描画
 var style : GUIStyle;

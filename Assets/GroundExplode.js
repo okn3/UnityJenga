@@ -12,25 +12,25 @@ function Update () {
 var pointFlag : boolean = true;
 
 var green : int = 0;
-var greens = ['Cube1-1', 'Cube4-1', 'Cube8-1'];
+var greens = ['Cube1-1', 'Cube4-1', 'Cube8-1', 'Cube13-1'];
 
 var red : int = 1;
-var reds = ['Cube1-2', 'Cube3-3', 'Cube4-3', 'Cube7-1', 'Cube9-2', 'Cube12-3', 'Cube13-2'];
+var reds = ['Cube1-2', 'Cube3-3', 'Cube4-3', 'Cube7-1', 'Cube9-2', 'Cube12-3', 'Cube14-3', 'Cube15-2'];
 
 var blue : int = 2;
-var blues = ['Cube2-2', 'Cube5-1', 'Cube8-3', 'Cube13-1'];
+var blues = ['Cube2-2', 'Cube5-1', 'Cube8-3', 'Cube15-1'];
 
 var yellow : int = 3;
-var yellows = ['Cube1-3', 'Cube5-3', 'Cube6-2', 'Cube8-2', 'Cube10-2', 'Cube12-2', 'Cube13-3'];
+var yellows = ['Cube1-3', 'Cube5-3', 'Cube6-2', 'Cube8-2', 'Cube10-2', 'Cube12-2', 'Cube-14-1', 'Cube15-3'];
 
 var normal : int = 4;
-var normals = ['Cube2-1', 'Cube3-1', 'Cube3-2', 'Cube4-2', 'Cube5-2', 'Cube6-1', 'Cube6-3', 'Cube9-1', 'Cube9-3', 'Cube10-3', 'Cube11-2', 'Cube11-3', 'Cube12-1'];
+var normals = ['Cube2-1', 'Cube3-1', 'Cube3-2', 'Cube4-2', 'Cube5-2', 'Cube6-1', 'Cube6-3', 'Cube9-1', 'Cube9-3', 'Cube10-3', 'Cube11-2', 'Cube11-3', 'Cube12-1', 'Cube13-2', 'Cube14-2'];
 
 var gold : int = 5;
 var golds = ['Cube2-3', 'Cube7-2', 'Cube11-1'];
 
 var black : int = 6;
-var blacks = ['Cube7-3', 'Cube10-1'];
+var blacks = ['Cube7-3', 'Cube10-1', 'Cube13-3'];
 var cubeName = '';
 var ary;
 Colo.color = 'normal';
@@ -72,23 +72,25 @@ function PironSE(){
 }
 
 function Sleep(){
-	Debug.Log("Sleep now");
+	Debug.Log("Sleep");
 }
 
 //end judge
 function OnCollisionEnter(obj:Collision){
-if (obj.gameObject.name == "Cube13-1" || obj.gameObject.name == "Cube13-2" || obj.gameObject.name == "Cube13-3"){
+if (obj.gameObject.name == "Cube15-1" || obj.gameObject.name == "Cube15-2" || obj.gameObject.name == "Cube15-3"){
 	transform.position.y = 2;
-	Invoke("Sleep",1);
-	// EndSE();
+  // Invoke("EndSE",0);
 
 	}else{
-		DropSE();
+
 	}
 
 //例外設定-下段-
   if (obj.gameObject.name == "Cube1-1" || obj.gameObject.name == "Cube1-2" || obj.gameObject.name == "Cube1-3"){
   } else {
+
+      DropSE();
+
     if (cubeName != obj.gameObject.name) {
     cubeName = obj.gameObject.name;
     //Debug.Log(obj.gameObject.name);
@@ -103,8 +105,6 @@ if (obj.gameObject.name == "Cube13-1" || obj.gameObject.name == "Cube13-2" || ob
     // select next color
     if (pointFlag != true) {
   } else {
-
-  PironSE();
 
   var n = rand();
   switch (n)
@@ -181,6 +181,7 @@ function addPoint(color) {
   //Debug.Log(pointFlag);
   if (pointFlag != true) {
   } else {
+
   switch (color)
     {
     case 'red':
@@ -202,6 +203,8 @@ function addPoint(color) {
         Score.point += 10;
         break;
     }
+        Invoke("PironSE",1);
+
     //Debug.Log('point:' + point);
     //GameObject.Score.text = 'scorehoge';
     //.findChild('Score').text = "Score : " + point;

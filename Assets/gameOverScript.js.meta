@@ -3,7 +3,7 @@ guid: ecbabb177d4c942148b31d8c719ffbaf
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - end: {fileID: 8300000, guid: cfe36cba3fd2b4dcc92dd2d726fb07fa, type: 3}
+  - mario: {fileID: 8300000, guid: 1e94375fb6c054631a2dd502dca26724, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

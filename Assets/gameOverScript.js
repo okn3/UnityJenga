@@ -1,8 +1,10 @@
 ﻿#pragma strict
 
 function Start () {
-  // Invoke("EndSE",6);
-  Invoke("restart",1);
+
+	// Invoke("marioSE", 2);
+	// marioSE();
+  Invoke("restart",2.5);
 }
 // GUI描画
 var style : GUIStyle;
@@ -15,8 +17,8 @@ function restart() {
 }
 
 //終了音
-var end : AudioClip;
-function EndSE(){
-	audio.clip = end;
+var mario : AudioClip;
+function marioSE(){
+	audio.clip = mario;
     audio.Play();
 }

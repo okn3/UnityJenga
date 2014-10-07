@@ -2,6 +2,7 @@
 
 function Start () {
 	StartSE();
+  resetPoint();
 }
 
 function Update () {
@@ -12,25 +13,25 @@ function Update () {
 var pointFlag : boolean = true;
 
 var green : int = 0;
-var greens = ['Cube1-1', 'Cube4-1', 'Cube8-1', 'Cube13-1'];
+var greens = ['Cube1-1', 'Cube4-1', 'Cube8-1'];
 
 var red : int = 1;
-var reds = ['Cube1-2', 'Cube3-3', 'Cube4-3', 'Cube7-1', 'Cube9-2', 'Cube12-3', 'Cube14-3', 'Cube15-2'];
+var reds = ['Cube1-2', 'Cube3-3', 'Cube7-1', 'Cube9-2', 'Cube12-3', 'Cube15-2'];
 
 var blue : int = 2;
-var blues = ['Cube2-2', 'Cube5-1', 'Cube8-3', 'Cube15-1'];
+var blues = ['Cube2-2', 'Cube4-3', 'Cube5-1', 'Cube8-3', 'Cube15-1'];
 
 var yellow : int = 3;
-var yellows = ['Cube1-3', 'Cube5-3', 'Cube6-2', 'Cube8-2', 'Cube10-2', 'Cube12-2', 'Cube-14-1', 'Cube15-3'];
+var yellows = ['Cube5-3', 'Cube6-2', 'Cube8-2', 'Cube10-2', 'Cube12-2', 'Cube15-3'];
 
 var normal : int = 4;
-var normals = ['Cube2-1', 'Cube3-1', 'Cube3-2', 'Cube4-2', 'Cube5-2', 'Cube6-1', 'Cube6-3', 'Cube9-1', 'Cube9-3', 'Cube10-3', 'Cube11-2', 'Cube11-3', 'Cube12-1', 'Cube13-2', 'Cube14-2'];
+var normals = ['Cube2-1', 'Cube1-3', 'Cube3-1', 'Cube3-2', 'Cube4-2', 'Cube5-2', 'Cube6-1', 'Cube6-3', 'Cube9-1', 'Cube9-3', 'Cube10-3', 'Cube11-2', 'Cube11-3', 'Cube12-1'];
 
 var gold : int = 5;
-var golds = ['Cube2-3', 'Cube7-2', 'Cube11-1'];
+var golds = ['Cube2-3', 'Cube7-2', 'Cube11-1', 'Cube10-1'];
 
 var black : int = 6;
-var blacks = ['Cube7-3', 'Cube10-1', 'Cube13-3'];
+var blacks = ['Cube7-3'];
 var cubeName = '';
 var ary;
 Colo.color = 'normal';
@@ -78,7 +79,9 @@ function Sleep(){
 //end judge
 function OnCollisionEnter(obj:Collision){
 if (obj.gameObject.name == "Cube15-1" || obj.gameObject.name == "Cube15-2" || obj.gameObject.name == "Cube15-3"){
-	transform.position.y = 2;
+
+  //GroundCrash
+	// transform.position.y = 2;
   // Invoke("EndSE",0);
 
 	}else{
@@ -99,7 +102,9 @@ if (obj.gameObject.name == "Cube15-1" || obj.gameObject.name == "Cube15-2" || ob
       //Debug.Log(finalPoint);
       pointFlag = false;
       Colo.color = '';
-      transform.position.y = 2;
+
+      //GroundCrash
+      transform.position.y = 6;
     }
 
     // select next color
@@ -211,4 +216,9 @@ function addPoint(color) {
     //onGUI('point: ' + point);
 
   }
+}
+
+//ポイントの初期化
+function resetPoint(){
+  Score.point = 0;
 }

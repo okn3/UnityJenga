@@ -8,7 +8,6 @@ function OnCollisionEnter(obj:Collision){
 	    SendMessage('Explode'); //落下で爆発
 	    BombSE();
 	    Invoke("restart",2);
-	  // transform.position.y -= 10;
 	}
 }
 

@@ -1,5 +1,4 @@
-﻿#pragma strict
-
+﻿
 function Start () {
 	StartSE();
   resetPoint();
@@ -36,6 +35,8 @@ var cubeName = '';
 var ary;
 Colo.color = 'normal';
 ary = normals;
+
+var count = counter(0);
 
 //開始音
 var start : AudioClip;
@@ -105,6 +106,7 @@ if (obj.gameObject.name == "Cube15-1" || obj.gameObject.name == "Cube15-2" || ob
 
       //GroundCrash
       transform.position.y = 6;
+      if (count() < 2) gameOverScript.ranking.Add(Score.point);
     }
 
     // select next color
@@ -221,4 +223,11 @@ function addPoint(color) {
 //ポイントの初期化
 function resetPoint(){
   Score.point = 0;
+}
+
+function counter(n) {
+  var c : int = n;
+  return function() {
+    return ++c;
+  };
 }

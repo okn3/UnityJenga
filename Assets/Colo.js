@@ -9,6 +9,6 @@ function Update () {
   if (color == '') {
     this.guiText.text = "";
   } else {
-    this.guiText.text = "Next : " + color;
+    this.guiText.text = "           → " + color;
   }
 }

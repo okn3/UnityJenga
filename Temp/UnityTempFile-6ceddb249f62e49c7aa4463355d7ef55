@@ -39,8 +39,13 @@
 -define:ENABLE_NAVMESH_CARVING
 -define:ENABLE_DUCK_TYPING
 -define:ENABLE_SINGLE_INSTANCE_BUILD_SETTING
--r:'/Applications/Unity/Unity.app/Contents/PlaybackEngines/WebPlayer/Managed/UnityEngine.dll'
+-define:ENABLE_PROFILER
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_OSX
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll'
 -r:'Assets/LeapCSharp.NET3.5.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
+-i:UnityEditor
 'Assets/BombScript.js'
 'Assets/CameraScript.js'
 'Assets/Colo.js'

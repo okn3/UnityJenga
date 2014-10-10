@@ -6,5 +6,5 @@ function Start () {
 }
 
 function Update () {
-  this.guiText.text = "Score : " + point;
+  this.guiText.text = "                   " + point;
 }
